@@ -2,15 +2,14 @@
 <html>
 
 <head>
-  <script src="https://accounts.google.com/gsi/client" async></script>
+  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
 
   <script>
-    async function handleSignInWithGoogle(response) {
-      const { data, error } = await supabase.auth.signInWithIdToken({
-        provider: 'google',
-        token: response.credential,
-      })
-    }
+    const { createClient } = supabase
+    const _supabase = createClient('https://rstnvxxmysdmukkpucaa.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJzdG52eHhteXNkbXVra3B1Y2FhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzEyNTcxMzksImV4cCI6MjA0NjgzMzEzOX0.vGMYzY6YBqiGsYRRWj1dp_pmKK-hh7rY7miWaHfLZZw')
+
+    console.log('Supabase Instance: ', _supabase)
+    _supabase.auth.signIn({provider:'google' }) 
   </script>
 </head>
 
@@ -19,23 +18,14 @@
   <p>I'm hosted with GitHub Pages.</p>
 
 
-  <div id="g_id_onload"
-  data-client_id="42352751348-k8jj42bg2p8bliskjfglt1f24lrqu7r6.apps.googleusercontent.com"
-  data-context="signin"
-  data-ux_mode="popup"
-  data-callback="https://rstnvxxmysdmukkpucaa.supabase.co/auth/v1/callback"
-  data-auto_select="true"
-  data-itp_support="true">
-</div>
+  <div id="g_id_onload" data-client_id="42352751348-k8jj42bg2p8bliskjfglt1f24lrqu7r6.apps.googleusercontent.com"
+    data-context="signin" data-ux_mode="popup" data-callback="https://rstnvxxmysdmukkpucaa.supabase.co/auth/v1/callback"
+    data-auto_select="true" data-itp_support="true">
+  </div>
 
-<div class="g_id_signin"
-  data-type="standard"
-  data-shape="rectangular"
-  data-theme="outline"
-  data-text="signin_with"
-  data-size="large"
-  data-logo_alignment="left">
-</div>
+  <div class="g_id_signin" data-type="standard" data-shape="rectangular" data-theme="outline" data-text="signin_with"
+    data-size="large" data-logo_alignment="left">
+  </div>
 </body>
 
 </html>
