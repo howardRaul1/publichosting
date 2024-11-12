@@ -2,19 +2,20 @@
 <html>
 
 <head>
-  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+  <!-- <script src="https://unpkg.com/@supabase/supabase-js@2"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
   <script>
     const { createClient } = supabase
     const _supabase = createClient('https://rstnvxxmysdmukkpucaa.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJzdG52eHhteXNkbXVra3B1Y2FhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzEyNTcxMzksImV4cCI6MjA0NjgzMzEzOX0.vGMYzY6YBqiGsYRRWj1dp_pmKK-hh7rY7miWaHfLZZw')
 
     console.log('Supabase Instance: ', _supabase)
-    _supabase.auth.signIn({provider:'google' }) 
+    _supabase.auth.signInWithOAuth({provider:'google' }) 
   </script>
 </head>
 
 <body>
-  <h1>Hello World, 2024 11 12, 3.41pm</h1>
+  <h1>Hello World, 2024 11 12, 3.50pm</h1>
   <p>I'm hosted with GitHub Pages.</p>
 
 
