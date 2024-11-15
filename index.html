@@ -11,7 +11,14 @@
       const _supabase = createClient('https://rstnvxxmysdmukkpucaa.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJzdG52eHhteXNkbXVra3B1Y2FhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzEyNTcxMzksImV4cCI6MjA0NjgzMzEzOX0.vGMYzY6YBqiGsYRRWj1dp_pmKK-hh7rY7miWaHfLZZw')
 
       console.log('Supabase Instance: ', _supabase)
-      _supabase.auth.signInWithOAuth({ provider: 'google' })
+      _supabase.auth.signInWithOAuth(
+        {
+          provider: 'google',
+          options: {
+            redirectTo: `https://howardraul1.github.io/publichosting/`,
+          },
+
+        })
     }
 
   </script>
